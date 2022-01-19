@@ -3,6 +3,7 @@ import Amplify, {API, graphqlOperation }  from "aws-amplify";
 import awsconfig from "./aws-exports";
 import { createTodo } from "./graphql/mutations";
 import { listTodos } from './graphql/queries';
+import { onCreateTodo, onUpdateTodo, onDeleteTodo } from './graphql/subscriptions';
 
 Amplify.configure(awsconfig);
 
@@ -31,6 +32,7 @@ async function getData() {
 const MutationButton = document.getElementById("MutationEventButton");
 const MutationResult = document.getElementById("MutationResult");
 const QueryResult = document.getElementById("QueryResult");
+const SubscriptionResult = document.getElementById('SubscriptionResult');
 
 MutationButton.addEventListener("click", async (evt) => {
     const result = await createNewTodo();
@@ -41,5 +43,13 @@ MutationButton.addEventListener("click", async (evt) => {
     }
     alert('Failed: createTodo');
 });
+
+API.graphql(graphqlOperation(onCreateTodo)).subscribe({
+    next: (result) => {
+        console.log('OnCreateTodo', result);
+        const todo = result.value.data.onCreateTodo;
+        SubscriptionResult.innerHTML += `<p>${todo.name} - ${todo.description}</p>`;
+    }
+})
 
 getData();
