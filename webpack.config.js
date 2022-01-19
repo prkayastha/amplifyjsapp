@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: './src/app-vanilla.js',
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -22,11 +22,11 @@ module.exports = {
       overlay: true
     },
     hot: true,
-    watchFiles: ['src/*', 'index.html']
+    watchFiles: ['src/*', 'index-vanilla.html']
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: ['index.html']
+      patterns: ['index-vanilla.html']
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
