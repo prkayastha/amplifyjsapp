@@ -1,8 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Auth } from 'aws-amplify';
+import { NextResponse } from 'next/server';
 
 export default function Home() {
+  const authSignOut = async () => {
+    try {
+      await Auth.signOut();
+    } catch (error) {
+      console.log('error signing out: ', error);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +22,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div>
+          <button type="button" onClick={authSignOut}>Sign out</button>
+        </div>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
