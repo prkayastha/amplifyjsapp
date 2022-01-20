@@ -7,6 +7,7 @@ export const getTodo = /* GraphQL */ `
       id
       name
       description
+      priority
       createdAt
       updatedAt
     }
@@ -22,6 +23,36 @@ export const listTodos = /* GraphQL */ `
       items {
         id
         name
+        description
+        priority
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getTest = /* GraphQL */ `
+  query GetTest($id: ID!) {
+    getTest(id: $id) {
+      id
+      type
+      description
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTests = /* GraphQL */ `
+  query ListTests(
+    $filter: ModelTestFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTests(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        type
         description
         createdAt
         updatedAt

@@ -48,5 +48,12 @@
         ]
       }
     }
+  },
+  "function": {
+    "echofunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }

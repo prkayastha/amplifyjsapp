@@ -6,4 +6,11 @@ type Todo @model {
   id: ID!
   name: String!
   description: String
+  priority: String
+}
+
+type Test @model {
+  id: ID!
+  type: String!
+  description: String
 }
