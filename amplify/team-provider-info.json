@@ -17,6 +17,9 @@
           "appId": "d3es4y188zb9b",
           "type": "manual"
         }
+      },
+      "auth": {
+        "amplifyjsapp0a999eb9": {}
       }
     }
   }
