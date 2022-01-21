@@ -40,8 +40,6 @@
         ]
     },
     "scripts": {
-        "start-native": "webpack && webpack-dev-server --mode development",
-        "build-native": "webpack",
         "dev": "next dev",
         "build": "next build",
         "start": "next start",

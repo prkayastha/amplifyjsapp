@@ -19,7 +19,8 @@
         }
       },
       "auth": {
-        "amplifyjsapp0a999eb9": {}
+        "amplifyjsapp0a999eb9": {},
+        "true": {}
       }
     }
   }

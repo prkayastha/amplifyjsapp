@@ -36,7 +36,7 @@
     "sharedId": "0a999eb9",
     "resourceName": "amplifyjsapp0a999eb9",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "defaultSocial",
+    "useDefault": "default",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
@@ -55,12 +55,7 @@
     },
     "breakCircularDependency": true,
     "dependsOn": [],
-    "hostedUI": true,
-    "hostedUIDomainName": "amplifyjsapp2973fb22-2973fb22",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "authProviders": [],
-    "hostedUIProviderCreds": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://locahost:3000/\",\"https://www.example.com/\",\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"https://www.example.com/\"]}"
+    "hostedUI": false,
+    "authProviders": []
   }
 }
